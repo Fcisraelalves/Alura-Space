@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'galeria',
+    'galeria.apps.GaleriaConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +123,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'setup/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
