@@ -12,3 +12,13 @@ def imagem(request, imagem_id):
     fotografia = get_object_or_404(Fotografia, id=imagem_id)
     context = {'fotografia' : fotografia}
     return render(request, 'galeria/imagem.html', context)
+
+def buscar(request):
+    fotos = Fotografia.objects.order_by('-data_fotografia').filter(publicada=True)
+
+    if 'buscar' in request.GET:
+        nome_a_buscar = request.GET['buscar']
+        if nome_a_buscar:
+            fotos = fotos.filter(nome__icontains=nome_a_buscar)
+    return render(request, 'galeria/buscar.html', {'fotos' : fotos})
+
