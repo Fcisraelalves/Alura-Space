@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('imagem/<int:imagem_id>', views.imagem, name='imagem'),
-    path('buscar', views.buscar, name='buscar')
+    path('buscar', views.buscar, name='buscar'),
+    path('buscar_categoria/<str:categoria>', views.buscar_categoria, name='buscar_categoria')
 ]

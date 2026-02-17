@@ -22,3 +22,7 @@ def buscar(request):
             fotos = fotos.filter(nome__icontains=nome_a_buscar)
     return render(request, 'galeria/buscar.html', {'fotos' : fotos})
 
+def buscar_categoria(request, categoria):
+    fotos = Fotografia.objects.order_by('-data_fotografia').filter(publicada=True).filter(categoria=categoria)
+    return render(request, 'galeria/buscar.html', {'fotos' : fotos})
+
