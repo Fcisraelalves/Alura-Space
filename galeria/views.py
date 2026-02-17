@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Fotografia
 # Create your views here.
 def index(request):
-    fotos = Fotografia.objects.all()
+    fotos = Fotografia.objects.order_by('-data_fotografia').filter(publicada=True)
     return render(request, 'galeria/index.html', {'fotos' : fotos})
 
 def imagem(request, imagem_id):
