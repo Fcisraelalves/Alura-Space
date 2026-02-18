@@ -7,6 +7,7 @@ class Categorias(models.TextChoices):
     ESTRELA = 'ESTRELA', 'Estrela'
     PLANETA = 'PLANETA', 'Planeta'
     NEBULOSA = 'NEBULOSA', 'Nebulosa'
+    LUA = 'LUA', 'Lua'
 
 class Fotografia(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
